@@ -1,0 +1,269 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: MainFont;
+    src: url(MongolianBaitiRegular.ttf);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: MainFont;
+    background-color: #10141E;
+    color: #b4b3d8;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(20,22,33,0) 0%, rgba(40,35,68,0.2) 100%);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+    z-index: 200
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0rem 0rem 2rem rgba(40, 35, 68, 0.8);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border: 1px solid transparent;
+    border-radius: 1px;
+    background: linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(40,35,68,1) 100%), linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(76,73,103,1) 100%);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    box-shadow: 0rem 0rem 5rem rgba(40, 35, 68, 0.8);
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        box-shadow: 0rem 0rem 5rem rgba(76,73,103,1);
+    }
+
+header {
+    width: 100%;
+    padding: 1rem 2rem; /* Adjusted to provide space on both sides */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensures the header stays on top */
+    background: rgba(16, 20, 30, 0.3);
+    box-shadow: 0rem 0rem 5rem rgba(40, 35, 68, 0.8), inset 0rem 0rem 6rem rgba(40, 35, 68, 0.8);
+    backdrop-filter: blur(40px);
+    overflow: visible;
+}
+
+    header .container {
+        display: flex;
+        justify-content: space-between; /* Adjusted for space between items */
+        align-items: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        color: #f0f0f0;
+        text-shadow: 0rem 0rem 2rem rgba(240, 240, 240, 0.3);
+        font-weight: normal;
+    }
+
+    header p {
+        margin: 0;
+        color: #b4b3d8;
+        font-size: 1.5rem;
+        text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+        text-align: left;
+    }
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.35rem;
+}
+
+    nav ul li {
+        display: inline;
+    }
+
+        nav ul li a {
+            color: #b4b3d8;
+            text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+            nav ul li a:hover {
+                color: #f0f0f0;
+                text-shadow: 0rem 0rem 2rem rgba(240, 240, 240, 0.6);
+            }
+
+main {
+    width: 100%;
+    max-width: 1600px;
+    padding: 5rem 2rem 2rem; /* Adjusted padding to accommodate fixed header */
+    margin-top: 6rem; /* Adjust margin to prevent content from being hidden behind the fixed header */
+}
+
+.projects, .about-me {
+    text-align: center;
+    width: 100%;
+}
+
+    .projects h2 {
+        font-size: 4.5rem;
+        margin-bottom: 2rem;
+        color: #b4b3d8;
+        text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+        font-weight: normal;
+    }
+
+    .about-me h2 {
+        font-size: 2.5rem;
+        padding: 3rem 0rem 0rem 0rem;
+        margin-bottom: 2rem;
+        color: #b4b3d8;
+        text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+        font-weight: normal;
+    }
+
+.project-container, .aboutme-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.project, .aboutme {
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background: linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(40,35,68,1) 100%), linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(76,73,103,1) 100%);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+    box-shadow: 0rem 0rem 5rem rgba(40, 35, 68, 0.8);
+    display: flex;
+    flex-direction: row; /* Ensure horizontal content */
+    align-items: flex-start; /* Align items to the top */
+    padding: 1rem;
+    width: calc(50% - 2rem); /* Ensure two projects sit side by side with a gap */
+    max-width: 1200px; /* Adjust width as needed */
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s;
+}
+
+    .project:hover {
+        border: 2px solid transparent;
+        border-radius: 20px;
+        background: linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(42,39,73,1) 100%), linear-gradient(326deg, rgba(28,31,44,1) 0%, rgba(82,78,114,1) 100%);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        box-shadow: 0rem 0rem 3rem rgba(57, 50, 96, 1);
+    }
+
+    .project .project-image, .aboutme .aboutme-image {
+        width: 450px;
+        height: 300px;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        background: linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(40,35,68,1) 100%), linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(76,73,103,1) 100%);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        margin-right: 1rem; /* Add some space between image and text */
+    }
+
+    .project .project-details, .aboutme .aboutme-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the top */
+        justify-content: flex-start; /* Ensure items are justified at the top */
+    }
+
+    .project h3, .aboutme h3 {
+        margin: 0;
+        font-size: 2.2rem;
+        color: #f0f0f0;
+        text-align: left; /* Ensure the project name is aligned to the left */
+        white-space: nowrap; /* Ensure the project title does not wrap */
+        font-weight: normal;
+    }
+
+    .project p, .aboutme p {
+        margin: 1rem 0; /* Adjusted margin for proper spacing */
+        font-size: 1.35rem;
+        color: #b4b3d8;
+        text-align: left; /* Ensure text is aligned to the left */
+    }
+
+/* Responsive design for mobile */
+@media (max-width: 968px) {
+    header .container {
+        flex-direction: column; /* Adjust header items to column layout */
+    }
+
+    header p {
+        margin: 0;
+        color: #b4b3d8;
+        font-size: 1.5rem;
+        text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+        text-align: center;
+        padding: 0px 0px 2rem 0px;
+    }
+
+    nav ul {
+        align-items: center;
+    }
+
+    .project-container, .aboutme-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects h2, .about-me h2 {
+        font-size: 3rem;
+    }
+
+    .project, .aboutme {
+        flex-direction: column; /* Change back to column on mobile */
+        width: 100%;
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text */
+    }
+
+        .project .project-image, .aboutme .aboutme-image {
+            width: 100%;
+            margin-right: 0; /* Remove margin-right on mobile */
+            margin-bottom: 1rem;
+        }
+
+        .project .project-details, .aboutme .aboutme-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items */
+            justify-content: center; /* Center justify content */
+            text-align: center; /* Center text */
+        }
+
+        .project h3, .aboutme h3 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .project p, .aboutme p {
+            text-align: center; /* Center text */
+        }
+}
