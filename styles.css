@@ -123,6 +123,7 @@ nav ul {
     display: flex;
     gap: 1rem;
     font-size: 1.35rem;
+    letter-spacing: .1rem;
 }
 
     nav ul li {
@@ -147,6 +148,7 @@ main {
     max-width: 2000px;
     padding: 5rem 2rem 2rem; /* Adjusted padding to accommodate fixed header */
     margin-top: 6rem; /* Adjust margin to prevent content from being hidden behind the fixed header */
+    letter-spacing: .1rem;
 }
 
 .projects, .about-me {
