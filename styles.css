@@ -356,23 +356,23 @@ main {
     }
 
 /* Responsive design for mobile */
-@media (max-width: 968px) {
+@media (max-width: 63em) {
     header {
         background: rgba(16, 20, 30, 1);
-
-    }
-    header .container {
-        flex-direction: column; /* Adjust header items to column layout */
     }
 
-    header p {
-        margin: 0;
-        color: #b4b3d8;
-        font-size: 1.5rem;
-        text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
-        text-align: center;
-        padding: 0px 0px 2rem 0px;
-    }
+        header .container {
+            flex-direction: column; /* Adjust header items to column layout */
+        }
+
+        header p {
+            margin: 0;
+            color: #b4b3d8;
+            font-size: 1.5rem;
+            text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+            text-align: center;
+            padding: 0px 0px 2rem 0px;
+        }
 
     nav ul {
         align-items: center;
