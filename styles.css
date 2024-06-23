@@ -25,6 +25,22 @@ body {
     background: linear-gradient(0deg, rgba(20,22,33,0) 0%, rgba(40,35,68,0.2) 100%);
 }
 
+.fade-in-content {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 20px;
@@ -59,8 +75,8 @@ header {
     left: 0;
     z-index: 100; /* Ensures the header stays on top */
     background: rgba(16, 20, 30, 0.3);
-    box-shadow: 0rem 0rem 5rem rgba(40, 35, 68, 0.8), inset 0rem 0rem 6rem rgba(40, 35, 68, 0.8);
-    backdrop-filter: blur(40px);
+    box-shadow: inset 0rem 0rem 6rem rgba(40, 35, 68, 0.8); /*0rem 0rem 5rem rgba(40, 35, 68, 0.8)*/
+    backdrop-filter: blur(20px);
     overflow: visible;
 }
 
@@ -85,6 +101,20 @@ header {
         text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
         text-align: left;
     }
+
+.header-fade {
+    width: 100%;
+    height: 50px; /* Adjust this value to control the height of the fade effect */
+    background: rgba(27, 27, 48, 1);
+    box-shadow: inset 0rem 0rem 6rem rgba(27, 27, 48, 0.8);
+    mask-image: linear-gradient(rgba(40, 35, 68, 1), transparent);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 100px; /* Adjust this value to position the fade below the header */
+    left: 0;
+    z-index: 99; /* Ensure it is just below the header */
+    pointer-events: none; /* Allows clicks to pass through */
+}
 
 nav ul {
     list-style: none;
@@ -114,7 +144,7 @@ nav ul {
 
 main {
     width: 100%;
-    max-width: 1600px;
+    max-width: 2000px;
     padding: 5rem 2rem 2rem; /* Adjusted padding to accommodate fixed header */
     margin-top: 6rem; /* Adjust margin to prevent content from being hidden behind the fixed header */
 }
@@ -122,6 +152,18 @@ main {
 .projects, .about-me {
     text-align: center;
     width: 100%;
+}
+
+.project iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(40,35,68,1) 100%), linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(76,73,103,1) 100%);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    margin-right: 1rem; /* Add some space between iframe and text */
 }
 
     .projects h2 {
@@ -161,10 +203,27 @@ main {
     align-items: flex-start; /* Align items to the top */
     padding: 1rem;
     width: calc(50% - 2rem); /* Ensure two projects sit side by side with a gap */
-    max-width: 1200px; /* Adjust width as needed */
+    max-width: 2000px; /* Adjust width as needed */
     margin-bottom: 2rem;
     transition: box-shadow 0.3s;
 }
+.about-me strong {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #b4b3d8;
+    text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.5);
+    font-weight: normal;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+    .aboutme:hover {
+        border: 2px solid transparent;
+        border-radius: 20px;
+        background: linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(42,39,73,1) 100%), linear-gradient(326deg, rgba(28,31,44,1) 0%, rgba(82,78,114,1) 100%);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        box-shadow: 0rem 0rem 3rem rgba(57, 50, 96, 1);
+    }
 
     .project:hover {
         border: 2px solid transparent;
@@ -209,8 +268,97 @@ main {
         text-align: left; /* Ensure text is aligned to the left */
     }
 
+.project-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: calc(50% - 2rem); /* Ensure two projects sit side by side with a gap */
+    max-width: 2000px; /* Adjust width as needed */
+}
+
+    .project-link .project {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%; /* Make sure project takes the full width of the anchor */
+    }
+
+/*SUBPAGES*/
+
+.project-details-section {
+    text-align: center;
+    padding: 0rem 3rem;
+}
+
+    .project-details-section h2 {
+        font-size: 4.5rem;
+        margin-bottom: 2rem;
+        color: #b4b3d8;
+        text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.3);
+        font-weight: normal;
+    }
+
+.project-details-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-video {
+    flex: 1;
+    min-width: 300px;
+    max-width: 700px; /* Ensure video has a maximum width */
+}
+
+    .project-video iframe {
+        width: 100%; /* Ensure iframe takes full width */
+        height: auto; /* Maintain aspect ratio */
+        aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+        border: 2px solid transparent;
+        border-radius: 10px;
+        background: linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(40,35,68,1) 100%), linear-gradient(326deg, rgba(20,22,33,1) 0%, rgba(76,73,103,1) 100%);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        box-shadow: 0rem 0rem 5rem rgba(40, 35, 68, 0.8);
+        margin-right: 1rem; /* Add some space between iframe and text */
+    }
+
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 3.5rem;
+    text-align: left;
+    flex: 1;
+    min-width: 200px;
+    padding: 2rem;
+}
+
+.project-info-item {
+    font-size: 1.5rem;
+    color: #b4b3d8;
+}
+
+    .project-info-item strong {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #f0f0f0;
+        text-shadow: 0rem 0rem 2rem rgba(180, 179, 216, 0.5);
+        font-weight: normal;
+    }
+
+    .project-info-item p {
+        margin: 0;
+        text-shadow: 0rem 0rem 2rem rgba(76, 73, 103, 0.5);
+    }
+
 /* Responsive design for mobile */
 @media (max-width: 968px) {
+    header {
+        background: rgba(16, 20, 30, 1);
+
+    }
     header .container {
         flex-direction: column; /* Adjust header items to column layout */
     }
@@ -244,6 +392,13 @@ main {
         text-align: center; /* Center text */
     }
 
+        .project iframe {
+            margin-right: 0; /* Remove margin-right on mobile */
+            margin-bottom: 1rem;
+            width: 100%;
+            height: auto; /* Ensure the height adjusts automatically */
+        }
+
         .project .project-image, .aboutme .aboutme-image {
             width: 100%;
             margin-right: 0; /* Remove margin-right on mobile */
@@ -266,4 +421,27 @@ main {
         .project p, .aboutme p {
             text-align: center; /* Center text */
         }
+
+    .project-link {
+        width: 100%;
+        flex-direction: column; /* Change back to column on mobile */
+    }
+
+        .project-link .project {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* Make sure project takes the full width of the anchor */
+        }
+
+    .project-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .project-video iframe {
+        margin-right: 0rem; /* Add some space between iframe and text */
+    }
 }
