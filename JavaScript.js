@@ -1,4 +1,18 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
+﻿document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll(".project-card");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("highlight");
+            } else {
+                entry.target.classList.remove("highlight");
+            }
+        });
+    }, { threshold: 0.9 }); // Adjust threshold for when to highlight (50% in view)
+
+    cards.forEach((card) => observer.observe(card));
+
         function applyTagRounding() {
             // For each `.tags` container
             document.querySelectorAll('.tags').forEach(function (container) {
