@@ -102,10 +102,10 @@
                     </div>
                 </div>
                 <div class="project-page-info-item">
-                    <h3 style="text-align: center; font-size: 1.7rem; padding-bottom: 1rem; ">UX</h3>
+                    <h3 style="text-align: center; font-size: 1.7rem; padding-bottom: 1rem; ">UX & Art</h3>
                     <div class="tags" style="align-items: center; justify-content: center;">
                         <span class="tag" style="font-size: 1.5rem">UI Manager</span>
-                        <span class="tag" style="font-size: 1.5rem">System Designer</span>
+                        <span class="tag" style="font-size: 1.5rem">Majority of 3D and 2D assets</span>
                     </div>
                 </div>
             </div>
@@ -164,13 +164,13 @@
                     I ended up conducting a fair bit of research into not just how other titles handle growth mechanics in general but I also studied real world plants, for example the Lindenmayer system used for describing plant growth, or how their stems split, where and why they split, the consistency of plant specific patterns and their exceptions, and more.
                     I’m very passionate about plants and I’ve always been fascinated by them and the mechanics behind their growth. I’ve been growing and taking care of plants for a few years and as we’d started development in early spring of 2024 this gave me the perfect opportunity to study plant growth first hand.<br /><br />
 
-                    I’d purchased a variety of plants, such as various chilis, wild strawberries, and even a wisteria sapling of which all were very interesting to observer and to note their various growth patterns and common features. 
+                    I’d purchased a variety of plants, such as various chilis, wild strawberries, and even a wisteria sapling of which all were very interesting to observer and to note their various growth patterns and common features.
                     Every week I’d make it a routine to check on their growth and to note any potential distinguishing features, such as the ability to see on chili plants (as well as others) and primarily their stems where new “nodes” could be found that allow the plant to grow both new leaves as well as branches.<br /><br />
 
 
-                    Early on I’d looked into the way a majority of games handle plant growth, for example mesh swapping or shape keys. But none of these satisfied me interms of their flexibility. We wanted something more, something truly unique and special.<br /><br />
+                    Early on I’d looked into the way a majority of games handle plant growth, for example mesh swapping or shape keys. But none of these satisfied me in terms of their flexibility. We wanted something more, something truly unique and special.<br /><br />
 
-                    When I noticed those “nodes” on my chili plants I got a sort of ureeka moment. I knew this was exactly what we needed! The only thing that remained was the implementation.
+                    When I noticed those “nodes” on my chili plants I got a sort of eureka moment. I knew this was exactly what we needed! The only thing that remained was the implementation.
                 </p>
             </div>
             <h2 class="project-contents-subtitle">HOW IT WORKS</h2>
@@ -179,21 +179,18 @@
                     <img src="Resources/Images/Bonsai98/Screenshot1.jpg" alt="Project Image">
                 </div>
                 <p>
-                    The growth system is built around three key actors that work together to create a dynamic and scalable procedural growth experience.<br /><br />
+                    The growth system is built around three key actors that work together to create dynamic and scalable procedural growth that mimics real plants to some extent.<br /><br />
 
-                    The Plant Master serves as the core of the system, managing overall growth logic and overseeing the construction of new branches. It stores crucial variables such as the total branch count, ensuring that growth remains balanced and controlled.<br /><br />
+                    - The Plant Master serves as the core of the system, managing overall growth logic and overseeing the construction of new branches. It stores crucial variables such as the total branch count, ensuring that growth remains balanced and controlled.<br /><br />
 
-                    The Branch Master is responsible for self-managing the individual growth behaviors of branches. It accounts for factors such as gravity, and growth direction while also handling pruning logic.<br /><br />
+                    - The Branch Master is responsible for self-managing the individual growth behaviors of branches. It accounts for factors such as gravity, and growth direction while also handling pruning logic.<br /><br />
 
-                    The Socket Master governs the probability and placement of new branches. By determining when and where branches should emerge, it ensures that plant growth follows a logical and organic progression.
+                    - The Socket Master governs the probability and placement of new branches. By determining where branches should emerge, as well as which branches have the possibility of spawning.<br /><br />
+
+                    These three actors communicate closely to maintain seamless procedural growth. The system primarily uses Blueprint interfaces for actor interaction while also utilizing direct access to relevant data when necessary. This structure not only keeps the system modular and adaptable but also enables quick modifications to the underlying logic. Additionally, the setup allows for the easy introduction of specific plant and branch variations, giving us the flexibility to fine-tune growth behaviors and expand on unique mechanics as needed.
                 </p>
             </div>
-            <div class="project-page-info-description">
-                <div class="project-page-info-image">
-                    <img src="Resources/Images/Bonsai98/Screenshot2.jpg" alt="Project Image">
-                </div>
-                <p>These three actors communicate closely to maintain a seamless procedural growth experience. The system primarily uses Blueprint interfaces for actor interaction while also utilizing direct access to relevant data when necessary. This structure not only keeps the system modular and adaptable but also enables quick modifications to the underlying logic. Additionally, the setup allows for the easy introduction of specific plant and branch variations, giving us the flexibility to fine-tune growth behaviors and expand on unique mechanics as needed.</p>
-            </div>
+            <h3 class="project-contents-subsubtitle">PLANT MASTER</h3>
             <div class="project-page-info-description">
                 <p>
                     The Plant Master serves as the foundation of the entire procedural growth system, acting as the core component that governs the creation and management of all plants in the world. It functions as the base structure, overseeing the initial placement and overall growth of the plant.<br /><br />
@@ -207,6 +204,8 @@
                     By centralizing core tree management within the Plant Master, the system remains flexible and modular, allowing for easy adjustments to growth logic, balance changes, and future expansions with new plant variations.
                 </p>
             </div>
+            <h3 class="project-contents-subsubtitle">BRANCH MASTER</h3>
+            <h3 class="project-contents-subsubtitle">SOCKET MASTER</h3>
             <h2 class="project-contents-subtitle">SAVING</h2>
             <div class="project-page-info-description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

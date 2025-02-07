@@ -719,6 +719,17 @@ mark {
     animation: 2s ease-in-out -1s 1 TextExpand;
 }
 
+.project-contents-subsubtitle {
+    width: 100%;
+    text-align: center;
+    text-align-last: center;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    letter-spacing: 0.5rem;
+    animation: 2s ease-in-out -1s 1 TextExpand;
+}
+
 .project-page-details-2 {
     display: flex;
     flex-wrap: wrap; /* Ensures the layout remains responsive */
