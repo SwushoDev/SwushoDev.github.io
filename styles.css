@@ -338,9 +338,9 @@ mark {
         text-align-last: left;
     }
 
-        .project-details .tags .tag:first-child:last-child {
-            border-radius: 20px; /* or whatever pill radius you want */
-        }
+    .project-details .tags .tag:first-child:last-child {
+        border-radius: 20px; /* or whatever pill radius you want */
+    }
 
 /* Give tags a “default” shape if desired, or none. */
 .tag {
@@ -379,7 +379,7 @@ mark {
     margin: -1rem auto;
     max-width: 1300px;
     color: var(--text-white);
-    padding: 2rem 2rem 12rem 2rem; /* Add padding to prevent overflow */
+    padding: 0rem 2rem 12rem 2rem; /* Add padding to prevent overflow */
     justify-content: center; /* Center the grid */
 }
 
@@ -476,9 +476,9 @@ mark {
         justify-content: center;
     }
 
-    .other-project-details .tags .tag:first-child:last-child {
-        border-radius: 20px; /* or whatever pill radius you want */
-    }
+        .other-project-details .tags .tag:first-child:last-child {
+            border-radius: 20px; /* or whatever pill radius you want */
+        }
 
 /* 
 #########################################################################
@@ -557,7 +557,7 @@ mark {
 
     .project-page-video-placeholder iframe {
         width: 100%;
-        height: 340px;
+        aspect-ratio: 16 / 9; /* Automatically adjusts height */
         display: flex;
         border: 2px solid var(--outline-color);
         box-shadow: 0px 0px 10px 0px #FF0033;
@@ -677,6 +677,31 @@ mark {
         display: block;
     }
 
+.project-page-video-details {
+    flex: 0 0 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--outline-color);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 15px;
+    animation: 1.5s ease-in-out 0s 1 FadeIn;
+}
+
+    .project-page-video-details iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* Automatically adjusts height */
+        display: flex;
+        border: 2px solid var(--outline-color);
+        box-shadow: 0px 0px 10px 0px #FF0033;
+        align-items: center;
+        justify-content: center;
+        color: var(--outline-color);
+        border-radius: 15px;
+    }
+
 /* Paragraph takes up the remaining space */
 .project-page-info-description p {
     flex: 1;
@@ -727,6 +752,17 @@ mark {
     font-size: 1.5rem;
     color: var(--text-white);
     letter-spacing: 0.5rem;
+    animation: 2s ease-in-out -1s 1 TextExpand;
+}
+
+.project-contents-subsubsubtitle {
+    width: 100%;
+    text-align: center;
+    text-align-last: center;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    letter-spacing: 0rem;
     animation: 2s ease-in-out -1s 1 TextExpand;
 }
 
@@ -788,14 +824,14 @@ mark {
 .aboutme-section {
     background-color: var(--bg-color); /* Use universal background color */
     border-radius: 10px;
-    margin: -4rem auto;
-    padding: 2rem 2rem 7rem 2rem; /* Add padding to prevent overflow */
+    margin: -3rem auto;
+    padding: 2rem 2rem 2rem 2rem; /* Add padding to prevent overflow */
     max-width: 1200px;
     color: var(--text-white);
 }
 
     .aboutme-section a {
-        color: var(--outline-color-darker); /* Highlight email */
+        color: var(--outline-color-darker);
         text-decoration: none;
         transition: color 0.3s ease;
     }
@@ -804,14 +840,19 @@ mark {
             color: var(--outline-color)
         }
 
-aboutme-page-core:after {
-    content: "";
-    display: table;
-    clear: both;
+.aboutme-page-core {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.contact-info {
+    display: block; /* Prevents flex issues inside */
+    text-align: center;
 }
 
 .aboutme-column-1 {
-    float: left;
     width: 30%;
     padding: 1rem 3rem 1rem 1rem;
 }
@@ -830,6 +871,76 @@ aboutme-page-core:after {
     width: 70%;
     padding: 1rem 1rem 1rem 1rem;
 }
+
+.proficiencies-section {
+    background-color: var(--bg-color); /* Use universal background color */
+    border-radius: 10px;
+    margin: 3rem auto;
+    padding: 2rem 2rem 12rem 2rem; /* Add padding to prevent overflow */
+    max-width: 1200px;
+    color: var(--text-white);
+}
+
+.proficiencies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items horizontally */
+    gap: 7rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+    .proficiencies-grid img {
+        width: auto;
+        height: 45px;
+        animation: 1.5s ease-in-out 0s 1 FadeIn;
+        transition: transform 0.3s ease;
+    }
+
+        .proficiencies-grid img:hover {
+            transform: scale(1.2);
+        }
+
+.about-buttons {
+    display: flex;
+    justify-content: center; /* Keeps buttons aligned */
+    flex-wrap: wrap; /* Allows wrapping only if necessary */
+    gap: 1rem;
+    max-width: 100%; /* Ensures it doesn’t grow wider than its container */
+    margin-top: 2rem; /* Adds space below phone number */
+}
+
+.about-button {
+    max-width: 180px; /* Prevents them from getting too big */
+    border: 2px solid var(--outline-color);
+    border-radius: 30px;
+    padding: 1.5rem;
+    background-color: #1E181B;
+    text-align: center;
+    box-shadow: 0px 0px 50px -20px var(--outline-color), 0px 0px 1px 0px var(--outline-color) inset;
+    display: flex; /* Ensures contents are centered */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease;
+}
+
+    .about-button:hover {
+        transform: scale(1.02);
+        background-color: var(--outline-color);
+        box-shadow: 0px 0px 50px 10px var(--outline-color);
+        transition: all 0.8s ease;
+    }
+
+    .about-button img {
+        width: 100%; /* Make the image responsive */
+        max-width: 50px; /* Prevents it from growing too large */
+        height: auto;
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px var(--outline-color);
+        border: 0px solid var(--outline-color);
+    }
+
+
 /* 
 #########################################################################
                                  MOBILE

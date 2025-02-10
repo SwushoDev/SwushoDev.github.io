@@ -130,7 +130,7 @@
             <h2 class="project-contents-subtitle">INITIAL BRIEF</h2>
             <div class="project-page-info-description">
                 <p>
-                    At the start of production, Bonsai ‘98 was something very different. Me and Mukund Narayan had gotten together in hopes of creating a project that would showcase our system design abilities and how we would be able to reuse systems in future projects. We’d originally thought of Bonsai ‘98 as a shop management game. One where you as the player would take care of your plants in a realistic manner, watching them grow and even manipulating the plants themselves. We’d started outlining all these deeper systems that would be at play simultaneously. We felt that players needed them to be captivated.<br /><br />
+                    At the start of production, Bonsai ‘98 was something very different. Me and Mukund Narayan had gotten together in hopes of creating a project that would showcase our system design abilities and how we would be able to reuse systems in future projects. We’d originally thought of Bonsai ‘98 as a shop management game. One where you as the player would take care of your plants in a realistic manner, watching them grow and even manipulating the plants themselves.<br /><br />
 
                     When we first showed the growth system to our some of our other colleagues, we had what could be described best as a “wow” moment. We found inspite of everything that people were content, even without any real game mechanics, to just watch their plant grow! People were glued to the screen for a solid 10 minutes, just watching some digital plants grow. I knew this was it.
                 </p>
@@ -178,8 +178,8 @@
             </div>
             <h2 class="project-contents-subtitle">HOW IT WORKS</h2>
             <div class="project-page-info-description">
-                <div class="project-page-info-image">
-                    <img src="Resources/Images/Bonsai98/Screenshot1.jpg" alt="Project Image">
+                <div class="project-page-info-image" style="flex: 0 0 600px;">
+                    <img src="Resources/Images/Bonsai98/GrowthSystemEarly.jpg" alt="Project Image">
                 </div>
                 <p>
                     The growth system is built around three key actors that work together to create dynamic and scalable procedural growth that mimics real plants to some extent.<br /><br />
@@ -208,7 +208,75 @@
                 </p>
             </div>
             <h3 class="project-contents-subsubtitle">BRANCH MASTER</h3>
+            <div class="project-page-info-description">
+                <p>
+                    The Branch Master is the most complex component of the growth system, responsible for managing various growth behaviors, including gravity effects, climbing logic, root settling, and pruning mechanics.
+                </p>
+            </div>
+            <h4 class="project-contents-subsubsubtitle">Growth Process</h4>
+            <div class="project-page-info-description">
+                <p>
+                    When a socket instructs the Branch Master to spawn a new branch, the growth logic executes in a series of distinct steps to determine the final orientation of the branch:<br /><br />
+                    1 Initial Alignment – The new branch is first aligned with the direction of its parent socket, ensuring that it extends straight relative to its origin point.<br /><br />
+                    2 Gravitational Influence – The branch is then rotated toward the world’s Z-axis up vector, with the adjustment applied positively or negatively based on the desired gravitational force for that specific branch. This is achieved through lerping, allowing for controlled variation in how gravity influences different branches.<br /><br />
+                    3 Randomized Rotation – To introduce natural variation, random rotation is applied across all three rotational axes, preventing uniform and unnatural growth patterns.<br /><br />
+                    4 Settling Logic – If the branch needs to settle, a series of raycasts are fired to detect nearby geometry. This data is then used to align the branch mesh to surrounding surfaces, moving it closer to objects like rocks or the ground to for example achieve natural-looking root placement.<br /><br />
+                    5 Climbing Behavior – Climbing uses similar sampling methods as settling, allowing the branch to rotate and align itself with nearby surfaces while maintaining a slight offset. This enables branches to grow along walls or rocks, effectively simulating natural climbing plant behavior.<br /><br />
+                    6 Final Collision Checks – At the end of the growth process, a collision check ensures that the branch does not intersect with unwanted geometry, preventing unrealistic or broken placements.
+                </p>
+            </div>
+            <h4 class="project-contents-subsubsubtitle">Customization and Flexibility</h4>
+            <div class="project-page-info-description" style="flex-direction: row-reverse;">
+                <div class="project-page-info-image" style="flex: 0 0 400px;">
+                    <img src="Resources/Images/Bonsai98/BranchSettings.jpg" alt="Project Image">
+                </div>
+                <p>
+                    The Branch Master is highly customizable, allowing for fine-tuned control over how branches behave. It includes settings for:<br /><br />
+                    - Collision layers to determine what objects branches can interact with.<br />
+                    - Max deviations in roll and pivot angles to introduce variation.<br />
+                    - Gravitational force influence to adjust how strongly gravity affects growth.<br />
+                    - Growth constraints and logic overrides to modify behavior for specific branch types.
+                </p>
+            </div>
+            <h4 class="project-contents-subsubsubtitle">Pruning System</h4>
+            <div class="project-page-info-description">
+                <div class="project-page-video-details">
+                    <iframe src="https://www.youtube.com/embed/mDQzyQsW0B8?playlist=mDQzyQsW0B8&loop=1&autoplay=1&mute=1&controls=0"></iframe>
+                </div>
+                <p>
+                    The Branch Master also manages pruning mechanics, ensuring plants can dynamically respond to environmental changes. When a prune interface event is triggered via an interface call:<br /><br />
+                    1 - The branch identifies and marks all connected child branches and sockets.<br /><br />
+                    2 - The marked branches and sockets are deleted, effectively removing sections of the plant.<br /><br />
+                    3 - The Plant Master is notified of the changes, updating its socket availability to allow for new branch growth in cleared areas.
+                </p>
+            </div>
             <h3 class="project-contents-subsubtitle">SOCKET MASTER</h3>
+            <div class="project-page-info-description" style="flex-direction: row-reverse;">
+                <div class="project-page-info-image" style="flex: 0 0 400px;">
+                    <img src="Resources/Images/Bonsai98/SocketMaster.jpg" alt="Project Image">
+                </div>
+                <p>
+                    The Socket Master serves a straightforward yet essential function within the growth system: it acts as a potential growth point, determining what branches may spawn and handling the probability of their appearance.<br /><br />
+                    When the Socket Master receives a construct branch interface call, it initiates the branch growth process. This occurs within a limited number of max attempts, ensuring that the system doesn’t get stuck trying to generate an impossible structure.<br /><br />
+                    Each socket contains a dictionary (or map) of all possible branch classes that could spawn from it. This includes leaves, roots, or different branch types, each with an associated probability value. This probabilistic approach allows for varied and organic-looking plant structures, as different sockets can have unique probabilities for a varied set of branches that are set by hand.
+                </p>
+            </div>
+            <div class="project-page-info-description">
+                <div class="project-page-video-details">
+                    <iframe src="https://www.youtube.com/embed/fvwIMzP4mIE?playlist=fvwIMzP4mIE&loop=1&autoplay=1&mute=1&controls=0"></iframe>
+                </div>
+                <p>
+                    The process unfolds as follows: <br /><br />
+                    The socket iterates through its branch probability dictionary, attempting to spawn a branch based on predefined probabilities.<br />
+                    If a valid branch is successfully created, the socket signals to the Plant Master that it is now occupied.<br />
+                    The Plant Master then removes this socket from its list of available growth points, ensuring that it is not used again for further growth.<br /><br />
+                    By leveraging probability-based spawning, the Socket Master allows for highly customizable plant structures. Designers can:<br /><br />
+                    Define specific sockets that produce roots, leaves, or unique branch variations.<br />
+                    Adjust spawn rates for different plant sections, making some branches rarer than others.<br />
+                    Ensure controlled randomness, balancing procedural variety with structured plant forms.
+                </p>
+            </div>
+
             <h2 class="project-contents-subtitle">SAVING</h2>
             <div class="project-page-info-description">
                 <p>
