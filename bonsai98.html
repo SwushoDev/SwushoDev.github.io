@@ -63,12 +63,6 @@
                             <img src="Resources/Images/Logos/Blender.png" alt="Blender">
                         </div>
                     </div>
-                    <div class="project-page-info-item">
-                        <h3>LINKS</h3>
-                        <div class="project-page-tools">
-                            <a href="https://www.steam.com" target="_blank"><img src="Resources/Images/Logos/Steam.png" alt="Steam"></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </header>
@@ -130,14 +124,18 @@
             <h2 class="project-contents-subtitle">INITIAL BRIEF</h2>
             <div class="project-page-info-description">
                 <p>
-                    At the start of production, Bonsai ‘98 was something very different. Me and Mukund Narayan had gotten together in hopes of creating a project that would showcase our system design abilities and how we would be able to reuse systems in future projects. We’d originally thought of Bonsai ‘98 as a shop management game. One where you as the player would take care of your plants in a realistic manner, watching them grow and even manipulating the plants themselves.<br /><br />
+                    At the start of production, Bonsai ‘98 was something very different. Me and Mukund Narayan had gotten together in hopes of creating a project that would showcase our system design abilities and how we would be able to reuse systems in future projects. We’d originally thought of Bonsai ‘98 as a shop management game. One where you as the player would take care of your plants in a realistic manor, watching them grow and even manipulating the plants themselves. We’d started outlining all these deeper systems that would be at play simultaneously. We felt that players needed them to be captivated.<br /><br />
 
-                    When we first showed the growth system to our some of our other colleagues, we had what could be described best as a “wow” moment. We found inspite of everything that people were content, even without any real game mechanics, to just watch their plant grow! People were glued to the screen for a solid 10 minutes, just watching some digital plants grow. I knew this was it.
+                    When we first showed the growth system to some of our other colleagues, we had what could be described best as a “wow” moment. We found in spite of everything that people were content, even without any real game mechanics, to just watch their plant grow! People were glued to the screen for a solid 10 minutes, just watching some digital plants grow. I knew this was it.
                 </p>
             </div>
             <h2 class="project-contents-subtitle">PIVOTING</h2>
             <div class="project-page-info-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>
+                    While we’d continued working on our original vision for some time, it started to feel that we had overscoped, and not only overscoped but that a majority of the features we’d been ideating didn’t actually align with what players wanted. I had started thinking about how we could condense the experience to capture the true essence of what actually captivated people.<br /><br />
+
+                    Bonsai ‘98 got refined into its bare core, not a shop management experience, but rather we distilled it all the way down to the growth system itself. From there we realigned our pillars. We focused on two core aspects:
+                </p>
             </div>
         </div>
     </section>
@@ -286,9 +284,9 @@
 
                     But after taking some time to think about the problem and doing some quick research I was confident I’d got a fairly decent solution. Since everything within the game is contained in your pot that you create your scene within I could simply assign IDs to each actor in the hierarchy and also keep track of each actor’s parent’s ID as well. This effectively allows me to reconstruct the entire scenes hierarchy as needed.<br /><br />
 
-                    To start, when creating any new actor, be it a prop the player can place or a new branch growing on the tree we simply generate it a new Globally unique identifier (GUID). When we eventually need to save the players diorama we can pull each actors respective GUID as well as their parent’s and write that to a save file. <br /><br />
+                    To start, when creating any new actor, be it a prop the player can place or a new branch growing on the tree we simply generate it a new Globally unique identifier (GUID). When we eventually need to save the player's diorama we can pull each actor's respective GUID as well as their parent’s and write that to a save file. <br /><br />
 
-                    Then upon loading it we can first just initialize all our saved actors and their positions & rotations etc, after which we can re-attach them by finding their parents thus recreating the original hierarchy. While I was initially concerned inregards to save and load times, I found through testing the initial implementation that they were negligible. Would I have liked to have a better more efficient system in place? Yes, absolutely. Would it be worth the extra production time? No, not at all.
+                    Then upon loading it we can first just initialize all our saved actors and their positions & rotations etc, after which we can re-attach them by finding their parents thus recreating the original hierarchy. While I was initially concerned inregards to save and load times, I found through testing the initial implementation that they were negligible. Would I have liked to have a better, more efficient system in place? Yes, absolutely. Would it be worth the extra production time? No, not at all.
                 </p>
             </div>
             <h2 class="project-contents-subtitle">TROUBLES AND PITFALLS</h2>
@@ -304,16 +302,25 @@
         </div>
     </section>
 
-    <section id="PROP SYSTEM" class="projects-contents">
+    <section id="PROP SYSTEM" class="projects-contents" style="padding: 4rem 0rem 13rem 0rem;">
         <div class="project-page-details-2">
             <h1 class="project-contents-title">PROP SYSTEM</h1>
-            <h2 class="project-contents-subtitle">HOW IT WORKS</h2>
             <div class="project-page-info-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <h2 class="project-contents-subtitle">SAVING PROGRESS &<br />ACCOUNTING FOR FUTURE CONTENT</h2>
-            <div class="project-page-info-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>
+                    Another key feature of Bonsai '98 is the Prop System, which enables players to bring their artistic vision to life by decorating their dioramas. This system gives players the freedom to customize their creations, enhancing the aesthetic and storytelling potential of their bonsai arrangements.<br /><br />
+                    The way props are handled and saved follows a structure similar to the Growth System. Each prop is assigned a globally unique identifier (GUID) along with the GUID of its parent object. This allows us to reconstruct the scene’s hierarchy whenever props are loaded, ensuring that all decorations retain their correct positions and relationships.<br /><br />
+                    Props are dynamically loaded into the prop menu from a Data Table, which contains:<br /><br />
+                     - All available props in the game.<br /><br />
+                     - Their respective categories (e.g., rocks, ornaments, environmental     elements).<br /><br />
+                     - Their unlock state.<br /><br />
+                     - Additional metadata for UI and gameplay interactions.<br /><br />
+                    Upon launching the game for the first time, a player progress save file is created. This file tracks unlock progress for various tree types, pots, and props, ensuring that players retain their earned items across sessions.<br /><br />
+                    During gameplay, players unlock new props through progression mechanics, such as leveling up. When a new prop is unlocked:<br /><br />
+                     - The save file is updated to reflect the newly unlocked state.<br /><br />
+                     - The game ensures that the prop is now available in the prop menu for placement.<br /><br />
+                    When launching the game after an update, the system checks for new props that were added post-update. If previously unregistered props exist, they are added to the save file with their default unlock state, ensuring that all new content integrates seamlessly without overwriting the player's progress.<br /><br />
+                    This system provides a smooth and persistent customization experience, allowing players to continually expand their dioramas while keeping all decorations and unlocks intact across multiple sessions.
+                </p>
             </div>
         </div>
     </section>

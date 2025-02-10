@@ -26,6 +26,16 @@ a {
     text-decoration: none;
 }
 
+.external-link {
+    color: var(--outline-color-darker); /* Highlight email */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .external-link:hover {
+        color: var(--outline-color)
+    }
+
 /* 
 #########################################################################
                                ANIMATIONS
