@@ -8,9 +8,12 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html"><div class="logo-main">MARTIN GRABINSKI</div></a>
+        <a href="index.html">
+            <div class="logo-main">MARTIN GRABINSKI</div>
+        </a>
         <div class="logo-secondary">System Designer</div>
-        <ul>
+        <!-- Navigation Menu remains inside the navbar -->
+        <ul id="nav-menu">
             <li><a href="index.html">Portfolio</a></li>
             <li><a href="other.html">Other</a></li>
             <li><a href="about.html">About</a></li>
@@ -18,9 +21,23 @@
         </ul>
     </nav>
 
+    <!-- Move the hamburger out of the navbar -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-menu-mobile">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="other.html">Other</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#cv">CV</a></li>
+    </ul>
+
     <section id="INTRODUCTION" style="background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('Resources/Images/ProjectBackgrounds/Insanis-background.jpg')" class="projects-introduction">
         <header class="project-page-header">
-            <h1 class="project-page-title" style="letter-spacing: 1.5rem">RANDOMIZED ISLAND GENERATION</h1>
+            <h1 class="project-page-title">RANDOMIZED ISLAND GENERATION</h1>
             <div class="project-page-details">
                 <div class="project-page-video">
                     <div class="project-page-video-placeholder">
@@ -62,7 +79,7 @@
         </header>
     </section>
 
-    <section id="projects" class="projects-description" style="margin-top: 45rem; margin-bottom: 9rem;">
+    <section id="projects" class="projects-description" style="margin-top: 50rem; margin-bottom: 9rem;">
         <div class="project-page-details">
             <div class="project-page-info-description">
                 <p>

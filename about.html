@@ -8,15 +8,32 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html"><div class="logo-main">MARTIN GRABINSKI</div></a>
+        <a href="index.html">
+            <div class="logo-main">MARTIN GRABINSKI</div>
+        </a>
         <div class="logo-secondary">System Designer</div>
-        <ul>
+        <!-- Navigation Menu remains inside the navbar -->
+        <ul id="nav-menu">
             <li><a href="index.html">Portfolio</a></li>
             <li><a href="other.html">Other</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#cv">CV</a></li>
         </ul>
     </nav>
+
+    <!-- Move the hamburger out of the navbar -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-menu-mobile">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="other.html">Other</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#cv">CV</a></li>
+    </ul>
 
     <section id="aboutme" class="aboutme-section">
         <h1 class="project-contents-title">ABOUT ME</h1>
@@ -58,19 +75,23 @@
     </section>
 
     <section id="proficiencies" class="proficiencies-section">
-            <h2 class="project-contents-subtitle">PROFICIENCIES</h2>
-            <div class="proficiencies-grid">
-                <img src="Resources/Images/Logos/Unreal.png" alt="Unreal Engine">
-                <img src="Resources/Images/Logos/CPP.png" alt="C++">
-                <img src="Resources/Images/Logos/Unity.png" alt="Unity">
-                <img src="Resources/Images/Logos/CS.png" alt="C#">
-                <img src="Resources/Images/Logos/Github.png" alt="Gitghub">
-                <img src="Resources/Images/Logos/P4.png" alt="Perforce">
-                <img src="Resources/Images/Logos/Miro.png" alt="Miro">
-                <img src="Resources/Images/Logos/Jira.png" alt="Jira">
-                <img src="Resources/Images/Logos/Office.png" alt="Microsoft Office">
-                <img src="Resources/Images/Logos/Blender.png" alt="Blender">
-            </div>
+        <h2 class="project-contents-subtitle">PROFICIENCIES</h2>
+        <div class="proficiencies-grid">
+            <img src="Resources/Images/Logos/Unreal.png" alt="Unreal Engine">
+            <img src="Resources/Images/Logos/CPP.png" alt="C++">
+            <img src="Resources/Images/Logos/Unity.png" alt="Unity">
+            <img src="Resources/Images/Logos/CS.png" alt="C#">
+            <img src="Resources/Images/Logos/Github.png" alt="Gitghub">
+            <img src="Resources/Images/Logos/P4.png" alt="Perforce">
+            <img src="Resources/Images/Logos/Python.png" alt="Python">
+            <img src="Resources/Images/Logos/Miro.png" alt="Miro">
+            <img src="Resources/Images/Logos/Jira.png" alt="Jira">
+            <img src="Resources/Images/Logos/Office.png" alt="Microsoft Office">
+            <img src="Resources/Images/Logos/Blender.png" alt="Blender">
+            <img src="Resources/Images/Logos/Photoshop.png" alt="Photoshop">
+            <img src="Resources/Images/Logos/Illustrator.png" alt="Illustrator">
+            <img src="Resources/Images/Logos/Premier.png" alt="Premier Pro">
+        </div>
     </section>
 
     <footer class="footer">

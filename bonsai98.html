@@ -8,15 +8,32 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html"><div class="logo-main">MARTIN GRABINSKI</div></a>
+        <a href="index.html">
+            <div class="logo-main">MARTIN GRABINSKI</div>
+        </a>
         <div class="logo-secondary">System Designer</div>
-        <ul>
+        <!-- Navigation Menu remains inside the navbar -->
+        <ul id="nav-menu">
             <li><a href="index.html">Portfolio</a></li>
             <li><a href="other.html">Other</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#cv">CV</a></li>
         </ul>
     </nav>
+
+    <!-- Move the hamburger out of the navbar -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-menu-mobile">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="other.html">Other</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#cv">CV</a></li>
+    </ul>
 
     <section id="INTRODUCTION" class="projects-introduction">
         <header class="project-page-header">
@@ -310,14 +327,14 @@
                     Another key feature of Bonsai '98 is the Prop System, which enables players to bring their artistic vision to life by decorating their dioramas. This system gives players the freedom to customize their creations, enhancing the aesthetic and storytelling potential of their bonsai arrangements.<br /><br />
                     The way props are handled and saved follows a structure similar to the Growth System. Each prop is assigned a globally unique identifier (GUID) along with the GUID of its parent object. This allows us to reconstruct the scene’s hierarchy whenever props are loaded, ensuring that all decorations retain their correct positions and relationships.<br /><br />
                     Props are dynamically loaded into the prop menu from a Data Table, which contains:<br /><br />
-                     - All available props in the game.<br /><br />
-                     - Their respective categories (e.g., rocks, ornaments, environmental     elements).<br /><br />
-                     - Their unlock state.<br /><br />
-                     - Additional metadata for UI and gameplay interactions.<br /><br />
+                    - All available props in the game.<br /><br />
+                    - Their respective categories (e.g., rocks, ornaments, environmental     elements).<br /><br />
+                    - Their unlock state.<br /><br />
+                    - Additional metadata for UI and gameplay interactions.<br /><br />
                     Upon launching the game for the first time, a player progress save file is created. This file tracks unlock progress for various tree types, pots, and props, ensuring that players retain their earned items across sessions.<br /><br />
                     During gameplay, players unlock new props through progression mechanics, such as leveling up. When a new prop is unlocked:<br /><br />
-                     - The save file is updated to reflect the newly unlocked state.<br /><br />
-                     - The game ensures that the prop is now available in the prop menu for placement.<br /><br />
+                    - The save file is updated to reflect the newly unlocked state.<br /><br />
+                    - The game ensures that the prop is now available in the prop menu for placement.<br /><br />
                     When launching the game after an update, the system checks for new props that were added post-update. If previously unregistered props exist, they are added to the save file with their default unlock state, ensuring that all new content integrates seamlessly without overwriting the player's progress.<br /><br />
                     This system provides a smooth and persistent customization experience, allowing players to continually expand their dioramas while keeping all decorations and unlocks intact across multiple sessions.
                 </p>

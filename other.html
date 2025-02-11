@@ -8,15 +8,32 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html"><div class="logo-main">MARTIN GRABINSKI</div></a>
+        <a href="index.html">
+            <div class="logo-main">MARTIN GRABINSKI</div>
+        </a>
         <div class="logo-secondary">System Designer</div>
-        <ul>
+        <!-- Navigation Menu remains inside the navbar -->
+        <ul id="nav-menu">
             <li><a href="index.html">Portfolio</a></li>
             <li><a href="other.html">Other</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#cv">CV</a></li>
         </ul>
     </nav>
+
+    <!-- Move the hamburger out of the navbar -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-menu-mobile">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="other.html">Other</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#cv">CV</a></li>
+    </ul>
 
     <section id="projects" class="other-projects-section">
         <a href="islandgen.html" class="project-link">
