@@ -1180,7 +1180,7 @@ mark {
     }
 
     .projects-description {
-        margin-top: 57rem !important; /* Override large inline margins */
+        margin-top: 59rem !important; /* Override large inline margins */
         margin-bottom: 3rem !important;
         padding: 2rem 1rem;
     }
