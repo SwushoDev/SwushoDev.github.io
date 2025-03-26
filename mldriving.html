@@ -17,7 +17,7 @@
             <li><a href="index.html">Portfolio</a></li>
             <li><a href="other.html">Other</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#cv">CV</a></li>
+            <li><a href="Resources/CV/Martin_Grabinski_CV.pdf" target="_blank">CV</a></li>
         </ul>
     </nav>
 
@@ -32,76 +32,79 @@
         <li><a href="index.html">Portfolio</a></li>
         <li><a href="other.html">Other</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#cv">CV</a></li>
+        <li><a href="Resources/CV/Martin_Grabinski_CV.pdf" target="_blank">CV</a></li>
     </ul>
 
     <section id="INTRODUCTION" style="background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('Resources/Images/ProjectBackgrounds/Insanis-background.jpg')" class="projects-introduction">
         <header class="project-page-header">
-            <h1 class="project-page-title" style="letter-spacing: 1.5rem">RANDOMIZED ISLAND GENERATION</h1>
+            <h1 class="project-page-title" style="letter-spacing: 1.5rem">UE NEURAL NET SELF DRIVING</h1>
             <div class="project-page-details">
                 <div class="project-page-video">
-                    <div class="project-page-video-placeholder">
-                        <iframe src="https://www.youtube.com/embed/XuzWXMC0P7s?playlist=XuzWXMC0P7s&loop=1&autoplay=1&mute=1&controls=0"></iframe>
+                        <div class="project-page-video-placeholder">
+                            <iframe src="https://www.youtube.com/embed/konyC38mIGg?playlist=konyC38mIGg&loop=1&autoplay=1&mute=1&controls=0"></iframe>
+                        </div>
+                    </div>
+                    <div class="project-page-info-grid">
+                        <div class="project-page-info-item">
+                            <h3>TAGS</h3>
+                            <div class="tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">UE 4</span>
+                                <span class="tag">Blueprints</span>
+                            </div>
+                        </div>
+                        <div class="project-page-info-item">
+                            <h3>YEAR</h3>
+                            <p>2022</p>
+                        </div>
+                        <div class="project-page-info-item">
+                            <h3>TIME</h3>
+                            <p>1 day</p>
+                        </div>
+                        <div class="project-page-info-item">
+                            <h3>TEAM</h3>
+                            <div class="team-container">
+                                <img src="Resources/Images/People/MartinGrabinski.jfif" style="width: 60px; height: 60px;" alt="Martin Grabinski">
+                            </div>
+                        </div>
+                        <div class="project-page-info-item tools">
+                            <h3>TOOLS</h3>
+                            <div class="project-page-tools">
+                                <img src="Resources/Images/Logos/Unreal.png" alt="Unreal Engine">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="project-page-info-grid">
-                    <div class="project-page-info-item">
-                        <h3>TAGS</h3>
-                        <div class="tags">
-                            <span class="tag">Procedural Generation</span>
-                            <span class="tag">UE 4</span>
-                            <span class="tag">Blueprints</span>
-                        </div>
-                    </div>
-                    <div class="project-page-info-item">
-                        <h3>YEAR</h3>
-                        <p>2022</p>
-                    </div>
-                    <div class="project-page-info-item">
-                        <h3>TIME</h3>
-                        <p>1 day</p>
-                    </div>
-                    <div class="project-page-info-item">
-                        <h3>TEAM</h3>
-                        <div class="team-container">
-                            <img src="Resources/Images/People/MartinGrabinski.jfif" style="width: 60px; height: 60px;" alt="Martin Grabinski">
-                        </div>
-                    </div>
-                    <div class="project-page-info-item tools">
-                        <h3>TOOLS</h3>
-                        <div class="project-page-tools">
-                            <img src="Resources/Images/Logos/Unreal.png" alt="Unreal Engine">
-                            <img src="Resources/Images/Logos/Blender.png" alt="Blender">
-                        </div>
-                    </div>
+            </header>
+        </section>
+
+        <section id="projects" class="projects-description" style="margin-top: 45rem; margin-bottom: 9rem;">
+            <div class="project-page-details">
+                <div class="project-page-info-description">
+                    <p>
+                        A quick weekend side project inspired by a YouTube video demonstrating a simple self-driving neural net in Unreal Engine. It got me wondering how challenging it would be to implement something similar using Blueprints. After some quick research, I felt confident enough to give it a shot. <br /> <br />
+
+                        The neural network receives input from five distance samples collected using line traces, arranged in a semi-circular pattern in front of the vehicle, along with the vehicle’s current velocity.
+
+                        I used a neuroevolutionary approach to train the network, scoring each car based on how far it managed to drive, with bonus points awarded for passing selected checkpoints. After each generation, the top 25% of performers are selected to "reproduce", with their weights slightly mutated based on a defined mutation rate that would decrease overtime.
+                    </p>
                 </div>
             </div>
-        </header>
-    </section>
+        </section>
 
-    <section id="projects" class="projects-description" style="margin-top: 45rem; margin-bottom: 9rem;">
-        <div class="project-page-details">
-            <div class="project-page-info-description">
-                <p>
-                    A short one day project where I played around with some simple line-trace based procedural generation that was inspired by how <a href="https://store.steampowered.com/app/1046030/ISLANDERS/" target="_blank" class="external-link">ISLANDERS</a> approaches their procedural island generation. I utilize different island layers in a step by step approach, starting with sand banks that then allow different island pieces to spawn on top of them. I also experimented with village generation through generating a central village starting point and then creating buildings in a variable circular area, with various parameters such as village size, inhabitant count, type and so on.
-                </p>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <p>Email: <a href="mailto:martin.l.grabinski@gmail.com">martin.l.grabinski@gmail.com</a></p>
+                    <p>© 2025 - Martin Grabinski</p>
+                </div>
+                <div class="footer-icons">
+                    <a href="mailto:martin.l.grabinski@gmail.com"><img src="Resources/Images/Logos/Mail.png" alt="Email" /></a>
+                    <a href="https://www.linkedin.com/in/martin-grabinski" target="_blank"><img src="Resources/Images/Logos/LinkedIn.png" alt="LinkedIn" /></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-info">
-                <p>Email: <a href="mailto:martin.l.grabinski@gmail.com">martin.l.grabinski@gmail.com</a></p>
-                <p>© 2025 - Martin Grabinski</p>
-            </div>
-            <div class="footer-icons">
-                <a href="mailto:martin.l.grabinski@gmail.com"><img src="Resources/Images/Logos/Mail.png" alt="Email" /></a>
-                <a href="https://www.linkedin.com/in/martin-grabinski" target="_blank"><img src="Resources/Images/Logos/LinkedIn.png" alt="LinkedIn" /></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="javascript.js"></script>
-</body>
-</html>
+        <script src="javascript.js"></script>
+    </body>
+    </html>
